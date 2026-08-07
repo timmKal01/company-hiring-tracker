@@ -1,0 +1,12 @@
+{
+    "actorSpecification": 1,
+    "name": "company-hiring-tracker",
+    "title": "Company Hiring Tracker - Job Openings via Greenhouse & Lever",
+    "description": "Pull a company's current open job listings from its public Greenhouse or Lever job board API: title, location, department, and posting date as clean JSON.",
+    "version": "0.1",
+    "meta": {
+        "templateId": "custom-no-proxy"
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile"
+}

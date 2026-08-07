@@ -1,0 +1,32 @@
+{
+    "title": "Company Hiring Tracker Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "boards": {
+            "title": "Company job boards",
+            "type": "array",
+            "editor": "json",
+            "description": "List of { \"ats\": \"greenhouse\"|\"lever\", \"slug\": \"company-board-slug\" }. The slug is the company identifier in the board's own URL, e.g. https://boards.greenhouse.io/stripe -> slug \"stripe\"; https://jobs.lever.co/palantir -> slug \"palantir\".",
+            "prefill": [
+                { "ats": "greenhouse", "slug": "stripe" },
+                { "ats": "lever", "slug": "palantir" }
+            ]
+        },
+        "keywordFilter": {
+            "title": "Title keyword filter",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Only keep jobs whose title contains one of these (case-insensitive). Leave empty to keep all jobs.",
+            "default": []
+        },
+        "includeDescription": {
+            "title": "Include full job description",
+            "type": "boolean",
+            "editor": "checkbox",
+            "description": "Fetch the full job description text (larger records). Off by default.",
+            "default": false
+        }
+    },
+    "required": ["boards"]
+}
