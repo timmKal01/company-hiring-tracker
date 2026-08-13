@@ -70,3 +70,9 @@ blanket `Allow: /`).
 Job counts per company vary enormously (a large company can have 500+ open
 roles in one call). Billing is per **board queried**, not per job returned,
 so pulling a big company's full board doesn't multiply the cost.
+
+## Related products
+
+- [Company Buying Signal Report](https://github.com/timmKal01/company-buying-signal-report) — turns the same hiring data into a scored buying signal, plus contact info
+- [Website Lead Extractor](https://github.com/timmKal01/website-lead-extractor) — find contact info for a hiring company before reaching out
+- [RemoteOK Job Scraper](https://github.com/timmKal01/remoteok-job-scraper) — a broader aggregator feed instead of a specific company's own board
