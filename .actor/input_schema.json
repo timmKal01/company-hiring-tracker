@@ -11,6 +11,10 @@
             "prefill": [
                 { "ats": "greenhouse", "slug": "stripe" },
                 { "ats": "lever", "slug": "palantir" }
+            ],
+            "default": [
+                { "ats": "greenhouse", "slug": "stripe" },
+                { "ats": "lever", "slug": "palantir" }
             ]
         },
         "keywordFilter": {
