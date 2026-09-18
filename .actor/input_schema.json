@@ -3,16 +3,28 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
+        "ats": {
+            "title": "Job board (for a single company)",
+            "type": "string",
+            "editor": "select",
+            "description": "Leave the Companies (multiple) field below empty to use this single-company shortcut instead.",
+            "enum": ["greenhouse", "lever"],
+            "enumTitles": ["Greenhouse", "Lever"],
+            "default": "greenhouse"
+        },
+        "slug": {
+            "title": "Company slug (for a single company)",
+            "type": "string",
+            "editor": "textfield",
+            "description": "The company's identifier in its job board's own URL, e.g. https://boards.greenhouse.io/stripe -> \"stripe\"; https://jobs.lever.co/palantir -> \"palantir\". Only used together with the Job board field above.",
+            "prefill": "stripe"
+        },
         "boards": {
-            "title": "Company job boards",
+            "title": "Company job boards (multiple)",
             "type": "array",
             "editor": "json",
-            "description": "List of { \"ats\": \"greenhouse\"|\"lever\", \"slug\": \"company-board-slug\" }. The slug is the company identifier in the board's own URL, e.g. https://boards.greenhouse.io/stripe -> slug \"stripe\"; https://jobs.lever.co/palantir -> slug \"palantir\".",
+            "description": "For checking several companies' boards in one run instead of one at a time. List of { \"ats\": \"greenhouse\"|\"lever\", \"slug\": \"company-board-slug\" }. Ignored if Company slug above is filled in.",
             "prefill": [
-                { "ats": "greenhouse", "slug": "stripe" },
-                { "ats": "lever", "slug": "palantir" }
-            ],
-            "default": [
                 { "ats": "greenhouse", "slug": "stripe" },
                 { "ats": "lever", "slug": "palantir" }
             ]
@@ -31,6 +43,5 @@
             "description": "Fetch the full job description text (larger records). Off by default.",
             "default": false
         }
-    },
-    "required": ["boards"]
+    }
 }
