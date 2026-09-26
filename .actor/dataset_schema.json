@@ -1,0 +1,63 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "company",
+                    "ats",
+                    "jobId",
+                    "title",
+                    "location",
+                    "department",
+                    "url",
+                    "postedAt",
+                    "updatedAt"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "company": {
+                        "label": "Company",
+                        "format": "text"
+                    },
+                    "ats": {
+                        "label": "ATS",
+                        "format": "text"
+                    },
+                    "jobId": {
+                        "label": "Job ID",
+                        "format": "text"
+                    },
+                    "title": {
+                        "label": "Title",
+                        "format": "text"
+                    },
+                    "location": {
+                        "label": "Location",
+                        "format": "text"
+                    },
+                    "department": {
+                        "label": "Department",
+                        "format": "text"
+                    },
+                    "url": {
+                        "label": "URL",
+                        "format": "link"
+                    },
+                    "postedAt": {
+                        "label": "Posted at",
+                        "format": "date"
+                    },
+                    "updatedAt": {
+                        "label": "Updated at",
+                        "format": "date"
+                    }
+                }
+            }
+        }
+    }
+}
