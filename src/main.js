@@ -4,7 +4,12 @@ import { fetchBoard } from './boards.js';
 await Actor.init();
 
 const input = (await Actor.getInput()) ?? {};
-const { boards = [], keywordFilter = [], includeDescription = false } = input;
+const { ats: singleAts, slug: singleSlug, boards: boardsInput, keywordFilter = [], includeDescription = false } = input;
+
+// The single-company fields (ats/slug) exist so a Store visitor never has to touch the raw JSON
+// "boards" editor just to check one company. They take priority when filled in; "boards" is for
+// the bulk/multi-company case.
+const boards = singleSlug ? [{ ats: singleAts || 'greenhouse', slug: singleSlug }] : (boardsInput?.length ? boardsInput : []);
 
 if (boards.length === 0) {
     throw new Error('No boards provided.');
